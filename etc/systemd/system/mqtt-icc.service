@@ -1,0 +1,14 @@
+[Unit]
+Description=Translate ICC MQTT messages for Domoticz
+After=syslog.target network.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=15sec
+StandardOutput=null
+StandardError=null
+ExecStart=/usr/local/bin/node /usr/local/lib/node_modules/mqtt-icc/index.js
+
+[Install]
+WantedBy=multi-user.target
