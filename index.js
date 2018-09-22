@@ -20,7 +20,8 @@ var config = {
 	'BMV': {
 		'SOC': 32,
 		'Voltage': 33,
-		'Amps': 34
+		'Amps': 34,
+		'Midpoint': 35
 	}
 };
 
