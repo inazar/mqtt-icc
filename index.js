@@ -26,7 +26,7 @@ var config = {
 
 client.on('message', function (topic, message) {
 	var t = topic.split('/'), base = t[0], val = t[1], cfg = config[base];
-	if (cfg[val]) {
+	if (cfg && cfg[val]) {
 		client.publish(d_topic, JSON.stringify({
 			idx: cfg[val],
 			nvalue: 0,
