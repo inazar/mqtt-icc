@@ -22,6 +22,9 @@ var config = {
 		'Voltage': 33,
 		'Amps': 34,
 		'Midpoint': 35
+	},
+	'Inverter': {
+		 'GridVoltage': 58
 	}
 };
 
