@@ -33,6 +33,8 @@ var config = {
 	}
 };
 
+var modeIdx = 65;
+
 var heater = {
 	"Hall": 59,
 	"Galya": 60,
@@ -56,6 +58,11 @@ client.on('message', function (topic, message) {
 				idx: cfg[val],
 				nvalue: 0,
 				svalue: message.toString()
+			}));
+		} else if (val === "InverterMode") {
+			client.publish(d_topic, JSON.stringify({
+				idx: modeIdx,
+				nvalue: /\(Grid\)/.test(message) ? 1 : 0,
 			}));
 		}
 	}
