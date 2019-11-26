@@ -57,7 +57,7 @@ client.on('message', function (topic, message) {
 		}
 	} else {
 		var t = topic.split('/'), base = t[0], val, cfg;
-		if (t.length = 3 && base === "Heating" && t[2] === "state" && heater[t[1]]) {
+		if (t.length === 3 && base === "Heating" && t[2] === "state" && heater[t[1]]) {
 			message = JSON.parse(message);
 			client.publish(d_in_topic, JSON.stringify({
 				idx: heater[t[1]],
